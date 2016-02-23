@@ -1,9 +1,9 @@
-package ua.in.directdemocracy.service.api.authentication;
+package ua.in.directdemocracy.service.api.rest.authentication;
 
-public class LoginAndPasswordCredentials {
+public class UserPasswordDto {
 
     private String login;
-    private Password password;
+    private String password;
     
     public String getLogin() {
         return login;
@@ -13,12 +13,13 @@ public class LoginAndPasswordCredentials {
         this.login = login;
     }
     
-    public Password getPassword() {
+    public String getPassword() {
         return password;
     }
     
-    public void setPassword(Password password) {
+    public void setPassword(String password) {
         this.password = password;
     }
+    
     
 }
