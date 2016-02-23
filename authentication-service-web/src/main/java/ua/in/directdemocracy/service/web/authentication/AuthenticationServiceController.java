@@ -1,5 +1,7 @@
 package ua.in.directdemocracy.service.web.authentication;
 
+import org.springframework.stereotype.Component;
+
 import ua.in.directdemocracy.service.api.authentication.AuthenticationService;
 import ua.in.directdemocracy.service.api.authentication.LoginAndPasswordCredentials;
 import ua.in.directdemocracy.service.api.authentication.LoginAndTokenCredentials;
@@ -8,8 +10,9 @@ import ua.in.directdemocracy.service.api.authentication.UserCertificate;
 import ua.in.directdemocracy.service.api.authentication.UserId;
 import ua.in.directdemocracy.service.api.authentication.UserSignature;
 
+@Component("authenticationService")
 public class AuthenticationServiceController implements AuthenticationService {
-
+    
     public UserId authenticateByLoginAndPassword(LoginAndPasswordCredentials credentials) {
         return null;
     }

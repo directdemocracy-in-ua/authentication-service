@@ -8,11 +8,35 @@
     <name>authentication-service</name>
     <description>Authentication Service</description>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <debug>true</debug>
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+    </properties>
+
     <modules>
         <module>authentication-service-api</module>
         <module>authentication-service-web</module>
         <module>authentication-service-standalone</module>
     </modules>
+    
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>1.8</target>
+                    <debug>${debug}</debug>
+                    
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencyManagement>
         <dependencies>
