@@ -7,9 +7,31 @@
     <packaging>pom</packaging>
     <name>authentication-service</name>
     <description>Authentication Service</description>
+
     <modules>
         <module>authentication-service-api</module>
         <module>authentication-service-web</module>
         <module>authentication-service-standalone</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>ua.in.directdemocracy.authentication-service</groupId>
+                <artifactId>authentication-service-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ua.in.directdemocracy.authentication-service</groupId>
+                <artifactId>authentication-service-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ua.in.directdemocracy.authentication-service</groupId>
+                <artifactId>authentication-service-standalone</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
 </project>

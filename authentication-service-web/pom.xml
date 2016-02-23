@@ -6,7 +6,16 @@
         <artifactId>authentication-service</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <groupId>ua.in.directdemocracy.authentication-service</groupId>
     <artifactId>authentication-service-web</artifactId>
     <name>authentication-service-web</name>
     <description>Web Authentication Service</description>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>ua.in.directdemocracy.authentication-service</groupId>
+            <artifactId>authentication-service-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>
