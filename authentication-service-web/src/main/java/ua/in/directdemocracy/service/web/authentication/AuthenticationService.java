@@ -7,7 +7,7 @@ import ua.in.directdemocracy.service.api.rest.authentication.UserDto;
 import ua.in.directdemocracy.service.api.rest.authentication.UserPasswordDto;
 
 @Component("authenticationService")
-public class AuthenticationService implements PasswordAuthenticationREST {
+public class AuthenticationService implements PasswordAuthenticationREST, AuthenticationServiceComponent {
 
     @Override
     public UserDto authenticateTextPassword(UserPasswordDto userPassword) {
