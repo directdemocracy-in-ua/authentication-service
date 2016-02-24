@@ -10,9 +10,16 @@ import ua.in.directdemocracy.service.api.rest.authentication.UserPasswordDto;
 public class AuthenticationService implements PasswordAuthenticationREST {
 
     @Override
-    public UserDto authenticate(UserPasswordDto userPassword) {
+    public UserDto authenticateTextPassword(UserPasswordDto userPassword) {
         UserDto user = new UserDto();
         user.setId(userPassword.getLogin());
+        return user;
+    }
+    
+    @Override
+    public UserDto authenticateByPasswordHash(String hashType, UserPasswordDto userPassword) {
+        UserDto user = new UserDto();
+        user.setId(userPassword.getLogin() + " " + hashType);
         return user;
     }
 
@@ -22,6 +29,8 @@ public class AuthenticationService implements PasswordAuthenticationREST {
         user.setId("test");
         return user;
     }
+
+    
     
     
 }

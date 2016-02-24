@@ -4,6 +4,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 @Path("/password")
@@ -12,7 +13,11 @@ import javax.ws.rs.Produces;
 public interface PasswordAuthenticationREST {
 
     @POST
-    UserDto authenticate(UserPasswordDto userPassword);
+    UserDto authenticateTextPassword(UserPasswordDto userPassword);
+    
+    @POST
+    @Path("/hash/{type}")
+    UserDto authenticateByPasswordHash(@PathParam("type") String hashType, UserPasswordDto userPassword);
     
     @GET
     UserDto test();
