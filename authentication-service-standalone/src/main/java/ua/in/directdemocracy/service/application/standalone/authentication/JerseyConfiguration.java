@@ -16,7 +16,7 @@ public class JerseyConfiguration {
     
     @Bean
     public ResourceConfig config() {
-        return new ResourceConfig().register(AuthenticationService.class);
+        return new ResourceConfig().register(passwordAuthenticationService);
     }
     
 }
