@@ -1,4 +1,4 @@
-package ua.in.directdemocracy.service.application.standalone.authentication.configuration;
+package ua.in.directdemocracy.service.application.standalone.authentication;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.beans.factory.annotation.Autowired;

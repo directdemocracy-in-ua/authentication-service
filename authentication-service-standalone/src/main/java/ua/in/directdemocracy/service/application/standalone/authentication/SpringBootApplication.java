@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
-import ua.in.directdemocracy.service.application.standalone.authentication.configuration.JerseyConfiguration;
-
 @EnableAutoConfiguration
 @Import(JerseyConfiguration.class)
 @ComponentScan("ua.in.directdemocracy.service.web.authentication")
