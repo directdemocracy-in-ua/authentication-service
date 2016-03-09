@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
+import ua.in.directdemocracy.service.api.rest.authentication.AuthenticationResultDto;
+import ua.in.directdemocracy.service.api.rest.authentication.AuthenticationStatus;
 import ua.in.directdemocracy.service.api.rest.authentication.PasswordAuthenticationREST;
 import ua.in.directdemocracy.service.api.rest.authentication.UserDto;
 import ua.in.directdemocracy.service.api.rest.authentication.UserPasswordDto;
@@ -15,21 +17,26 @@ public class AuthenticationService implements PasswordAuthenticationREST, Authen
     private Map<String, String> passwords = new HashMap<>();
     
     @Override
-    public UserDto authenticateTextPassword(UserPasswordDto userPassword) {
+    public AuthenticationResultDto authenticateTextPassword(UserPasswordDto userPassword) {
+        AuthenticationResultDto result = new AuthenticationResultDto();
         if (!passwords.containsKey(userPassword.getLogin())) {
-            return null;
+            result.setStatus(AuthenticationStatus.USER_NOT_FOUND);
+            return result;
         }
         String password = passwords.get(userPassword.getLogin());
         if (password.equals(userPassword.getPassword())) {
             UserDto user = new UserDto();
             user.setId(userPassword.getLogin());
-            return user;
+            result.setUser(user);
+            result.setStatus(AuthenticationStatus.AUTHENTICATED);
+            return result;
         }
-        return null;
+        result.setStatus(AuthenticationStatus.WRONG_PASSWORD);
+        return result;
     }
     
     @Override
-    public UserDto authenticateByPasswordHash(String hashType, UserPasswordDto userPassword) {
+    public AuthenticationResultDto authenticateByPasswordHash(String hashType, UserPasswordDto userPassword) {
         return authenticateTextPassword(userPassword);
     }
 

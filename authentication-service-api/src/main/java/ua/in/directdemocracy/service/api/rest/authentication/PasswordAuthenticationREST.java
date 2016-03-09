@@ -14,11 +14,11 @@ import javax.ws.rs.Produces;
 public interface PasswordAuthenticationREST {
 
     @POST
-    UserDto authenticateTextPassword(UserPasswordDto userPassword);
+    AuthenticationResultDto authenticateTextPassword(UserPasswordDto userPassword);
     
     @POST
     @Path("/hash/{type}")
-    UserDto authenticateByPasswordHash(@PathParam("type") String hashType, UserPasswordDto userPassword);
+    AuthenticationResultDto authenticateByPasswordHash(@PathParam("type") String hashType, UserPasswordDto userPassword);
     
     @POST
     @Path("/create")
