@@ -20,6 +20,7 @@
         <module>authentication-service-api</module>
         <module>authentication-service-web</module>
         <module>authentication-service-standalone</module>
+        <module>authentication-service-domain</module>
     </modules>
     
 
