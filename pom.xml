@@ -19,9 +19,9 @@
     <modules>
         <module>authentication-service-api</module>
         <module>authentication-service-domain</module>
+        <module>authentication-service-infrastructure</module>
         <module>authentication-service-web</module>
         <module>authentication-service-standalone</module>
-
     </modules>
     
 
