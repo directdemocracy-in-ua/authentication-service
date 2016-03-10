@@ -14,6 +14,8 @@
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+        
+        <junit.version>4.12</junit.version>
     </properties>
 
     <modules>
@@ -23,7 +25,7 @@
         <module>authentication-service-web</module>
         <module>authentication-service-standalone</module>
     </modules>
-    
+
 
     <build>
         <plugins>
@@ -34,7 +36,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <debug>${debug}</debug>
-                    
+
                 </configuration>
             </plugin>
         </plugins>
@@ -61,6 +63,14 @@
                 <groupId>ua.in.directdemocracy.authentication-service</groupId>
                 <artifactId>authentication-service-standalone</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+
+            <!-- Tests -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
 

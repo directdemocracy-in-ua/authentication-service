@@ -16,5 +16,11 @@
             <groupId>ua.in.directdemocracy.authentication-service</groupId>
             <artifactId>authentication-service-domain</artifactId>
         </dependency>
+        
+        <!-- Tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
 </project>
