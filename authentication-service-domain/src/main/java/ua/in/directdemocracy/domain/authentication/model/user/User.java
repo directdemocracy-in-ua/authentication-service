@@ -3,6 +3,7 @@ package ua.in.directdemocracy.domain.authentication.model.user;
 public class User {
 
     private String id;
+    private String loginHash;
     private String passwordId;
     
     public String getId() {
@@ -20,5 +21,14 @@ public class User {
     public void setPasswordId(String passwordId) {
         this.passwordId = passwordId;
     }
+
+    public String getLoginHash() {
+        return loginHash;
+    }
+
+    public void setLoginHash(String loginHash) {
+        this.loginHash = loginHash;
+    }
+    
     
 }

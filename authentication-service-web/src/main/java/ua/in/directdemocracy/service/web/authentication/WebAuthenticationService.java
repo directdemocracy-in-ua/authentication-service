@@ -12,7 +12,7 @@ import ua.in.directdemocracy.service.api.rest.authentication.UserDto;
 import ua.in.directdemocracy.service.api.rest.authentication.UserPasswordDto;
 
 @Component("authenticationService")
-public class AuthenticationService implements PasswordAuthenticationREST, AuthenticationServiceComponent {
+public class WebAuthenticationService implements PasswordAuthenticationREST, WebAuthenticationServiceComponent {
 
     private Map<String, String> passwords = new HashMap<>();
     

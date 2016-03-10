@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import ua.in.directdemocracy.service.api.rest.authentication.PasswordAuthenticationREST;
-import ua.in.directdemocracy.service.web.authentication.AuthenticationService;
-import ua.in.directdemocracy.service.web.authentication.AuthenticationServiceComponent;
+import ua.in.directdemocracy.service.web.authentication.WebAuthenticationService;
+import ua.in.directdemocracy.service.web.authentication.WebAuthenticationServiceComponent;
 
 @Configuration
 public class JerseyConfiguration {
@@ -19,7 +19,7 @@ public class JerseyConfiguration {
     PasswordAuthenticationREST passwordAuthenticationService;
     
     @Autowired
-    List<AuthenticationServiceComponent> authenticationServices; 
+    List<WebAuthenticationServiceComponent> authenticationServices; 
     
     @Bean
     public ResourceConfig config() {
