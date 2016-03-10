@@ -9,7 +9,7 @@ import ua.in.directdemocracy.domain.authentication.model.user.UserRepository;
 import ua.in.directdemocracy.domain.authentication.model.userpassword.UserPassword;
 import ua.in.directdemocracy.domain.authentication.model.userpassword.UserPasswordRepository;
 
-public class AdministionService {
+public class Administrator {
 
 
     @Resource
@@ -61,6 +61,31 @@ public class AdministionService {
         User user = usersRepository.save(newUser);
         return user;
     }
+
+    public UserRepository getUsersRepository() {
+        return usersRepository;
+    }
+
+    public void setUsersRepository(UserRepository usersRepository) {
+        this.usersRepository = usersRepository;
+    }
+
+    public UserPasswordRepository getPasswordsRepository() {
+        return passwordsRepository;
+    }
+
+    public void setPasswordsRepository(UserPasswordRepository passwordsRepository) {
+        this.passwordsRepository = passwordsRepository;
+    }
+
+    public HashService getHashService() {
+        return hashService;
+    }
+
+    public void setHashService(HashService hashService) {
+        this.hashService = hashService;
+    }
+    
     
     
 }
